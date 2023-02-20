@@ -42,4 +42,5 @@ get_asset_url <- function (asset_id) {
 #' @examples get_asset_id('px-x-0102020204_102')
 get_px_download_url <- function(px_id) {
   download_url <- get_asset_id(px_id) %>% get_asset_url()
+  return(download_url)
 }
