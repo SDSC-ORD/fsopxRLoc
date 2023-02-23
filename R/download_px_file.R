@@ -15,8 +15,8 @@ download_file_from_url <- function(download_url, destfile) {
     {
       file <- GET(download_url)
       file_size <- headers(file)$`content-length`
-      rc <- download.file(download_url, destfile=destfile)
-      if (rc != 0) {
+      success_code <- download.file(download_url, destfile=destfile)
+      if (success_code != 0) {
         stop("File could not be downloaded")
       }
       if (file.size(destfile) != file_size) {
