@@ -33,3 +33,8 @@ test_that("test error will be raised if px id is invalid and belongs to a non px
   url <- 'https://www.pxweb.bfs.admin.ch/DownloadFile.aspx?file=a'
   expect_error(download_px_cube(url))
 })
+
+test_that("test error will be raised if px id is invalid and belongs to a non px file", {
+  px_id <- 'a'
+  expect_error(get_fso_px_download_url(px_id))
+})
