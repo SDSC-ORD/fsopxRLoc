@@ -9,6 +9,10 @@
 get_fso_px_download_url <- function(px_id) {
   fso_px_url <- 'https://www.pxweb.bfs.admin.ch/DownloadFile.aspx?file='
   download_url <- paste0(fso_px_url, px_id)
-  check_px_cube_url(download_url)
+  is_px_cube_url <- check_px_cube_url(download_url)
+  if (!is_px_cube_url) {
+    stop("This id does not belong to a px cube file, check STAT-TAB - interactive tables (FSO) for
+         valid px cube files.")
+  }
   return(download_url)
 }
