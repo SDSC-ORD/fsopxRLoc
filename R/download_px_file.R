@@ -20,7 +20,8 @@ download_file_from_url <- function(download_url, destfile) {
         stop("File could not be downloaded")
       }
       if (file.size(destfile) != file_size) {
-        stop("Downloaded file has not the expected size")
+        file.remove(destfile)
+        stop("Download succeeded BUT the file did not have the expected size. The file has been removed.")
       }
       downloaded_file <- destfile
       return(downloaded_file)
