@@ -11,11 +11,26 @@ download urls.
 These tables are identified by a `px_id` and they us a 
 [px file format](https://www.scb.se/en/services/statistical-programs-for-px-files/px-file-format/)
 
-In many cases you know the `px_id` such as when you find that dataset on 
-[opendata.swiss](https://opendata.swiss/de/dataset/monatlicher-bruttolohn-nach-ausbildung/resource/ec658e42-315b-4174-a560-2b9dfaf6c38e)
-It is then of interest to derive the download url for that px file in a computational way from its `px_id`.
+This package helps you with the flowing tasks:
 
-This R package can help you with this task.
+- decide whether a download url belongs to a px file:
+
+```
+check_px_cube_url('https://www.pxweb.bfs.admin.ch/DownloadFile.aspx?file=px-x-0102020207_102')
+```
+
+- download a px cube from its px_id: optional include the location, where the file should be downloaded to
+
+```
+download_px_cube('px-x-0102020207_102')
+download_px_cube('px-x-0102020207_102', '/tmp')
+```
+
+- get download url for a px_id
+
+```
+get_fso_px_download_url('px-x-0102020207_102')
+```
 
 ## Installation
 
@@ -24,13 +39,5 @@ You can install the development version of fsopxRLoc from [GitHub](https://githu
 ``` r
 # install.packages("devtools")
 devtools::install_github("SDSC-ORD/fsopxRLoc")
-```
-
-## Example
-
-You derive the download url by providing the `px_id`:
-
-``` r
 library(fsopxRLoc)
-get_px_download_url("px-x-0102020204_102")
 ```
