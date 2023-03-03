@@ -16,5 +16,6 @@ Imports:
     jsonlite,
     pxweb,
     readr,
+    tibble,
     utils
 License: MIT + file LICENSE
