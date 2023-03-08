@@ -2,6 +2,9 @@
 
 export(check_px_cube_url)
 export(download_px_cube)
+export(enrich_fso_px_cube_list)
+export(enrich_fso_px_cube_list_in_batches)
+export(get_fso_px_cube_list)
 export(get_fso_px_download_url)
 import(httr)
 importFrom(dplyr,"%>%")
